@@ -14,7 +14,7 @@ Reputation systems are time-consuming to build and can be manipulated.
 
 Result: locked capital + disputes without reliable resolution.
 
-##💡 Solution
+## 💡 Solution
 Intent Governance Layer: an infrastructure on Stellar that adds governance and trust to agentic payments.
 
 Adaptive escrow based on reputation (score 300–900).
