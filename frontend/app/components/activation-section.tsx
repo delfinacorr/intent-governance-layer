@@ -22,12 +22,10 @@ export default function ActivationSection() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-1">
-                Account funding
+                Intent interception
               </h3>
               <p className="text-muted text-sm leading-relaxed">
-                Stellar requires a minimum XLM balance to activate an account.
-                The agent provisions exactly the right amount before the
-                transaction executes.
+                Avalo sits in the execution path of every agent call. Before any transaction reaches Stellar, the governance layer evaluates it against your active policy set.
               </p>
             </div>
 
@@ -48,13 +46,10 @@ export default function ActivationSection() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-1">
-                Activation before delivery
+                Policy evaluation
               </h3>
               <p className="text-muted text-sm leading-relaxed">
-                When the destination wallet is inactive, Intent detects it,
-                creates the account on-chain, sets up the necessary trustlines,
-                and then delivers the asset — all in a single transaction
-                envelope.
+                Rules are evaluated in priority order — amount thresholds, counterparty allowlists, velocity limits, and custom logic — returning an execute, review, or reject decision instantly.
               </p>
             </div>
 
@@ -75,12 +70,10 @@ export default function ActivationSection() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-1">
-                Zero setup for recipients
+                Controlled execution
               </h3>
               <p className="text-muted text-sm leading-relaxed">
-                The person receiving funds doesn&apos;t need to have ever
-                interacted with Stellar. They get a wallet address, you send
-                money, and it just arrives.
+                Approved intents are signed and submitted atomically. Flagged ones route to the human review queue. Rejected ones return a structured error to the agent with the policy reason.
               </p>
             </div>
           </div>
@@ -88,22 +81,17 @@ export default function ActivationSection() {
           {/* Right — text */}
           <div className="order-1 lg:order-2">
             <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-bold tracking-tight text-foreground leading-[1.15] mb-6">
-              Send to Any Wallet,
+              Every Intent,
               <br />
               <span className="bg-linear-to-r from-cyan to-cyan-dark bg-clip-text text-transparent">
-                Even New Ones
+                Under Control
               </span>
             </h2>
             <p className="text-muted text-lg leading-relaxed mb-4">
-              On Stellar, a wallet that has never received XLM literally
-              doesn&apos;t exist yet. Try to send tokens to it and the
-              transaction fails. This is the second wall your users hit.
+              Agents don&apos;t ask for permission — they act. The only way to govern autonomous systems is to intercept at the execution layer, not rely on the agent to self-regulate.
             </p>
             <p className="text-muted text-lg leading-relaxed mb-8">
-              Intent&apos;s agent detects inactive destinations and
-              programmatically handles the full sequence — account creation,
-              minimum balance funding, trustline setup, and asset delivery —
-              before the user even finishes blinking.
+              Avalo wraps your agent&apos;s Stellar calls with a policy runtime that validates intent, enforces limits, routes for human review, and records every decision — giving you full control without slowing agents down.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

@@ -85,32 +85,27 @@ function CodeLine({ line, num }: { line: string; num: number }) {
 
 export default function BuildersSection() {
   const codeLines = [
-    `import { Intent } from '@intent/sdk'`,
+    `import { Intent } from '@avalo/sdk'`,
     ``,
     `const client = new Intent({`,
     `  projectId: 'your-project-id',`,
     `  environment: 'production',`,
     `})`,
     ``,
-    `// Create a seamless payment flow`,
-    `const flow = await client.flows.create({`,
-    `  type: 'payment',`,
-    `  sponsorFees: true,`,
-    `  onboarding: {`,
-    `    mode: 'embedded',`,
-    `    skipSeedPhrase: true,`,
+    `// Submit an intent for governance validation`,
+    `const intent = await client.intents.create({`,
+    `  type: 'transfer',`,
+    `  agentId: 'agent_xyz',`,
+    `  policy: 'strict',`,
+    `  payload: {`,
+    `    destination: 'GBXXX...',`,
+    `    amount: '500.00',`,
+    `    currency: 'USDC',`,
     `  },`,
-    `  steps: [`,
-    `    {`,
-    `      action: 'transfer',`,
-    `      amount: '50.00',`,
-    `      currency: 'USDC',`,
-    `    }`,
-    `  ],`,
     `})`,
     ``,
-    `// User sees one clean action`,
-    `await flow.execute({ userId: 'user_abc123' })`,
+    `// Execute only after governance approval`,
+    `await intent.execute({ requireApproval: false })`,
   ];
 
   return (
@@ -127,12 +122,11 @@ export default function BuildersSection() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
             Built for teams that{" "}
             <span className="bg-gradient-to-r from-cyan to-accent bg-clip-text text-transparent">
-              ship real products
+              govern real agents
             </span>
           </h2>
           <p className="max-w-xl mx-auto text-gray-400 text-lg">
-            Integrate in minutes, not weeks. Intent gives you composable
-            primitives that fit your architecture.
+            Integrate in minutes, not weeks. Intent gives you a composable governance runtime that fits your existing agent architecture.
           </p>
         </div>
 
@@ -172,7 +166,7 @@ export default function BuildersSection() {
                   ),
                   title: "Fast integration",
                   description:
-                    "Go from zero to working flow in under 20 lines. Our SDK handles the complexity so you can focus on your product.",
+                    "Go from zero to governed intent execution in under 20 lines. The SDK wraps Stellar complexity so you focus on your agent logic.",
                 },
                 {
                   icon: (
@@ -180,9 +174,9 @@ export default function BuildersSection() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
                     </svg>
                   ),
-                  title: "Composable primitives",
+                  title: "Composable policies",
                   description:
-                    "Mix and match wallet, payment, and onboarding modules. Build exactly the flow your users need, nothing more.",
+                    "Stack rules for amounts, recipients, velocity, and custom logic. Build exactly the governance layer your agents need, nothing more.",
                 },
                 {
                   icon: (
@@ -192,7 +186,7 @@ export default function BuildersSection() {
                   ),
                   title: "Type-safe by default",
                   description:
-                    "Full TypeScript support with auto-complete, runtime validation, and clear error messages that actually help.",
+                    "Full TypeScript support with auto-complete for intent schemas, policy types, and governance decisions — clear error messages that actually help.",
                 },
               ] as { icon: ReactNode; title: string; description: string }[]
             ).map((item) => (

@@ -5,19 +5,15 @@ export default function GaslessSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
             <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-bold tracking-tight text-foreground leading-[1.15] mb-6">
-              Transact in Stablecoins,
+              Govern Intents,
               <br />
-              Skip the XLM
+              Secure the Network
             </h2>
             <p className="text-muted text-lg leading-relaxed mb-4">
-              Most Stellar apps force users to acquire XLM before they can do
-              anything — pay fees, set up trustlines, or simply send money.
-              That&apos;s a dealbreaker for non-crypto users.
+              AI agents can execute thousands of transactions per second with no human in sight. Without a governance layer, a single misconfigured agent can drain wallets, break compliance, or trigger irreversible on-chain state.
             </p>
             <p className="text-muted text-lg leading-relaxed mb-8">
-              Intent intercepts the transaction when a wallet has no XLM,
-              converts just enough stablecoin to cover the network cost, and
-              delivers the payment. One action from the user, zero XLM required.
+              Intent intercepts every agent action before it hits Stellar, runs it through your policy engine, and either executes, queues for review, or rejects it — all in milliseconds, with a full audit trail.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -79,12 +75,10 @@ export default function GaslessSection() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-1">
-                Automatic token swap
+                Intent Validation &amp; Compliance
               </h3>
               <p className="text-muted text-sm leading-relaxed">
-                The agent converts a fraction of the user&apos;s stablecoin
-                balance to XLM to cover network fees — no manual exchange
-                needed.
+                Every agent-submitted intent is checked against your policy rules — amount limits, allowed recipients, rate limits — before any transaction is signed or broadcast.
               </p>
             </div>
 
@@ -105,11 +99,10 @@ export default function GaslessSection() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-1">
-                Fee sponsorship
+                Secure Agentic Execution
               </h3>
               <p className="text-muted text-sm leading-relaxed">
-                Gas costs are fully abstracted. Users only see the stablecoin
-                amount they intended to send — no surprise XLM line items.
+                Approved intents are executed atomically on Stellar with full transaction signing, error handling, and on-chain finality — no partial states, no silent failures.
               </p>
             </div>
 
@@ -130,12 +123,10 @@ export default function GaslessSection() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-1">
-                Usage-based pricing
+                Full Audit Trail
               </h3>
               <p className="text-muted text-sm leading-relaxed">
-                A slightly higher fee than a standard transaction covers
-                slippage, XLM provisioning, and execution. Friction becomes an
-                embedded, pay-per-use cost.
+                Every intent — whether executed, queued, or rejected — is logged with the agent identity, policy decision, and on-chain result. Compliance reporting becomes trivial.
               </p>
             </div>
           </div>

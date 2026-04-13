@@ -10,17 +10,14 @@ export default function ProblemSection() {
             What is Intent
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
-            An agent-driven payment layer{" "}
+            An Agent-Driven Governance Layer{" "}
             <br className="hidden sm:block" />
             <span className="bg-linear-to-r from-accent to-accent-light bg-clip-text text-transparent">
               for Stellar
             </span>
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-muted leading-relaxed">
-            Requiring users to hold XLM for fees and account activation is the
-            biggest UX break preventing real adoption — especially for people
-            who have never touched crypto. Intent removes both barriers so your
-            users only ever see stablecoins.
+            Autonomous agents can move funds, trigger contracts, and interact with protocols at machine speed — with no human watching. Intent sits between the agent and the network, enforcing your policies before any action settles on-chain.
           </p>
         </div>
 
@@ -42,12 +39,10 @@ export default function ProblemSection() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-foreground mb-2">
-              Stablecoin-native transactions
+              Policy Enforcement
             </h3>
             <p className="text-muted leading-relaxed">
-              Users pay and receive in USDC or any stablecoin. When the network
-              needs XLM for fees, an agent swaps and sponsors it behind the
-              scenes — the user never knows.
+              Define rules for amounts, recipients, and transaction types. Every intent submitted by an agent is validated in real time against your business logic before it ever reaches the network.
             </p>
           </div>
 
@@ -68,12 +63,10 @@ export default function ProblemSection() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-foreground mb-2">
-              Automatic wallet activation
+              Human-in-the-Loop
             </h3>
             <p className="text-muted leading-relaxed">
-              Sending to a wallet that doesn&apos;t exist yet? Intent detects
-              it, funds the minimum balance, activates the account, and delivers
-              the payment — all in one step.
+              Flag high-risk actions for manual review. Operators get a dashboard notification and can approve or reject the intent before execution — keeping humans in control of what matters most.
             </p>
           </div>
         </div>
